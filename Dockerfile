@@ -6,8 +6,8 @@ COPY pyproject.toml /src
 COPY uv.lock /src
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-RUN uv python install 3.7
 RUN source $HOME/.local/bin/env (sh, bash, zsh)
+RUN uv python install 3.7
 RUN uv pip install -r pyproject.toml
 
 EXPOSE  8080
