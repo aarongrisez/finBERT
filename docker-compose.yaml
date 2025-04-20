@@ -17,3 +17,4 @@ services:
       - ./notebooks:/src/notebooks
       - ./scripts:/src/scripts
       - ./main.py:/src/main.py
+      - ./keys.json:/src/keys.json

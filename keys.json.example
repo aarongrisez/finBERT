@@ -1,0 +1,5 @@
+{
+    "CLIENT_ID": "YOUR_CLIENT_ID",
+    "CLIENT_SECRET": "YOUR_CLIENT_SECRET",
+    "USER_AGENT": "YourAppName/1.0 by /u/YourRedditUsername",
+}
