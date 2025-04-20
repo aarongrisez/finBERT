@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-runtime
 
 WORKDIR /src
 
@@ -7,6 +7,7 @@ COPY uv.lock /src
 
 COPY --from=ghcr.io/astral-sh/uv:0.6.14 /uv /uvx /bin/
 RUN uv python install 3.7
+RUN uv venv --python=$(uv python find 3.7)
 RUN uv --managed-python pip install -r pyproject.toml 
 
 EXPOSE  8080
