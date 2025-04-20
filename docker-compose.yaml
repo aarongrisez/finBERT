@@ -15,3 +15,4 @@ services:
       - ./models:/src/models
       - ./notebooks:/src/notebooks
       - ./scripts:/src/scripts
+      - ./main.py:/src/main.py
