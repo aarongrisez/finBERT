@@ -1,7 +1,8 @@
 services:
   finbert:
     build: .
-    er docker
+    deploy:
+      resources:
         reservations:
           devices:
             - driver: nvidia
