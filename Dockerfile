@@ -5,8 +5,7 @@ WORKDIR /src
 COPY pyproject.toml /src
 COPY uv.lock /src
 
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-RUN source $HOME/.local/bin/env (sh, bash, zsh)
+COPY --from=ghcr.io/astral-sh/uv:0.6.14 /uv /uvx /bin/
 RUN uv python install 3.7
 RUN uv pip install -r pyproject.toml
 
