@@ -1,5 +1,6 @@
 services:
   finbert:
+    command: ["uv", "run", "python3", "/src/main.py"]
     build: .
     deploy:
       resources:
