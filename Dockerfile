@@ -1,10 +1,10 @@
-from pytorch/pytorch:latest
+from pytorch/pytorch:1.1.0-cuda10.0-cudnn7.5-runtime
 
-RUN pip install pytorch_pretrained_bert numpy pandas nltk Flask flask-cors transformers
+WORKDIR /src
 
-COPY main.py /src/main.py
-COPY finbert /src/finbert
-COPY models /src/models
+COPY . /src
+
+RUN conda env create -f environment.yml && conda activate finbert
 
 EXPOSE  8080
 CMD ["python3", "/src/main.py"]

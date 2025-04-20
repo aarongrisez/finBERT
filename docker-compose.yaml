@@ -1,0 +1,16 @@
+services:
+  finbert:
+    build: .
+    er docker
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - 8080:8080
+    volumes:
+      - ./finbert:/src/finbert
+      - ./models:/src/models
+      - ./notebooks:/src/notebooks
+      - ./scripts:/src/scripts
